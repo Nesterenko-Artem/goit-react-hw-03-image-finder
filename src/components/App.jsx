@@ -1,16 +1,13 @@
 import { Component } from 'react';
 
-
-import { Searchbar } from './Searchbar/Searchbar';
-// import 'styles.css';
+import Searchbar from './Searchbar/Searchbar';
 
 export class App extends Component {
   render() {
     return (
       <>
-      <Searchbar />
+        <Searchbar/>
       </>
-      
     );
   }
 }

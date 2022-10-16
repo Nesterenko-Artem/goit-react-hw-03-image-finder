@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import { } from './';
+// import { } from './';
 // import PropTypes from 'prop-types';
 
-export class Searchbar extends Component {
-  state = {
+export default class Searchbar extends Component {
+  // state = {
     
-  };
+  // };
 
 //   hendleSubmit = event => {
 //     event.preventDefault();
