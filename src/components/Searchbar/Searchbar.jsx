@@ -1,46 +1,49 @@
 import { Component } from 'react';
+import { FiSearch } from "react-icons/fi";
 // import { } from './';
 // import PropTypes from 'prop-types';
 
 export default class Searchbar extends Component {
-  // state = {
-    
-  // };
+  state = {
+    imageSearch:'',
+  };
 
-//   hendleSubmit = event => {
-//     event.preventDefault();
+  hendleSubmit = event => {
+    event.preventDefault();
 
-//     this.props.onSabmitForm(this.state);
+    this.props.onSabmitForm(this.state.imageSearch);
 
-//     this.reset();
-//   };
+    this.reset();
+  };
 
-//   hendelInputChange = event => {
-//     this.setState({
-//       [event.currentTarget.name]: event.currentTarget.value,
-//     });
-//   };
+  hendelInputChange = event => {
+    this.setState({
+      imageSearch: event.currentTarget.value.toLowerCase()
+    });
+  };
 
-//   reset = () => {
-//     this.setState({});
-//   };
+  reset = () => {
+    this.setState({imageSearch:''});
+  };
 
   render() {
     return (
       <>
-        <header class="searchbar">
-          <form class="form">
-            <button type="submit" class="button">
-              <span class="button-label">Search</span>
-            </button>
-
+        <header className="searchbar">
+          <form className="searchForm" onSubmit={this.hendleSubmit}>
             <input
-              class="input"
+              className="searchForm-input"
               type="text"
-              autocomplete="off"
-              autofocus
+              autoComplete="off"
+              autoFocus
               placeholder="Search images and photos"
+              name='imageChange'
+              value={this.state.imageSearch}
+              onChange={this.hendelInputChange}
             />
+            <button type="submit" className="searchForm-button">
+              <span className="button-label"><FiSearch /></span>
+            </button>
           </form>
         </header>
       </>

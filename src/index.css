@@ -37,6 +37,11 @@ img {
     padding-bottom: 24px;
 }
 
+.loader {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
 
 /*
  * Стили компонента Searchbar
